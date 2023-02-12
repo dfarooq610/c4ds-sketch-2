@@ -1,12 +1,10 @@
-import { useState } from "react";
+interface IntroProps {
+  handleClick: () => void;
+}
 
-export const Intro = () => {
-  const [enteredMainArticle, setEnteredMainArticle] = useState<boolean>(false);
-
-  const handleClick = () => setEnteredMainArticle(true);
-
+const Intro = ({ handleClick }: IntroProps) => {
   return (
-    <section className="grow text-xl text-center m-auto flex flex-col justify-center max-w-prose items-center">
+    <section className="text-xl text-center m-auto flex flex-col justify-center max-w-prose items-center">
       <img src="SCOTUS.png" />
       <p>
         Too often, we only let the big moments define our perception of public
@@ -35,3 +33,5 @@ export const Intro = () => {
     </section>
   );
 };
+
+export default Intro;

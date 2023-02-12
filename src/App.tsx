@@ -1,6 +1,9 @@
-import { Intro } from "./components/ArticleApp";
+import { useState } from "react";
+import Article from "./components/Article";
+import Intro from "./components/Intro";
 
 function App() {
+  const [enteredMainArticle, setEnteredMainArticle] = useState<boolean>(false);
   return (
     <div className="bg-stone-100 h-fit-content min-h-screen min-w-full flex flex-col font-josefin-sans">
       <header className="mx-10 align-middle justify-center basis-1/12">
@@ -10,7 +13,11 @@ function App() {
         <hr className="bg-black h-1 mt-1 mb-3" />
       </header>
       <main className="grow mt-2 mx-10 my-5 basis-10/12 flex flex-col">
-        <Intro />
+        {!enteredMainArticle ? (
+          <Intro handleClick={() => setEnteredMainArticle(true)} />
+        ) : (
+          <Article />
+        )}
       </main>
       <footer className="bg-stone-300 align-middle justify-center basis-1/12">
         <p className="text-normal text-center my-5">
