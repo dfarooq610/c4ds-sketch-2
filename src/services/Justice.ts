@@ -12,7 +12,7 @@ export type Justice = {
 
 export const JUSTICES: Justice[] = [
   {
-    name: "Kentaji Brown Jackson",
+    name: "Ketanji Brown Jackson",
     yearNominated: 2022,
     senateMajority: {
       seats: 50,
@@ -20,7 +20,7 @@ export const JUSTICES: Justice[] = [
     },
     confirmationVoteTotal: 53,
     partisanIndex: 1,
-    imageLink: "",
+    imageLink: "/src/assets/KBJ.jpeg",
   },
   {
     name: "Clarence Thomas",
@@ -31,7 +31,7 @@ export const JUSTICES: Justice[] = [
     },
     confirmationVoteTotal: 52,
     partisanIndex: 1,
-    imageLink: "",
+    imageLink: "/src/assets/CT.jpeg",
   },
   {
     name: "Samuel Alito",
@@ -42,7 +42,7 @@ export const JUSTICES: Justice[] = [
     },
     confirmationVoteTotal: 58,
     partisanIndex: 1,
-    imageLink: "",
+    imageLink: "/src/assets/SA.jpeg",
   },
   {
     name: "John Roberts",
@@ -53,7 +53,7 @@ export const JUSTICES: Justice[] = [
     },
     confirmationVoteTotal: 78,
     partisanIndex: 1,
-    imageLink: "",
+    imageLink: "/src/assets/JR.jpeg",
   },
   {
     name: "Sonia Sotomayor",
@@ -64,7 +64,7 @@ export const JUSTICES: Justice[] = [
     },
     confirmationVoteTotal: 68,
     partisanIndex: 1,
-    imageLink: "",
+    imageLink: "/src/assets/SS.jpeg",
   },
   {
     name: "Elena Kagan",
@@ -75,7 +75,7 @@ export const JUSTICES: Justice[] = [
     },
     confirmationVoteTotal: 63,
     partisanIndex: 1,
-    imageLink: "",
+    imageLink: "/src/assets/EK.jpeg",
   },
   {
     name: "Amy Coney Barett",
@@ -86,7 +86,7 @@ export const JUSTICES: Justice[] = [
     },
     confirmationVoteTotal: 52,
     partisanIndex: 1,
-    imageLink: "",
+    imageLink: "/src/assets/ACB.jpeg",
   },
   {
     name: "Neil Gorsuch",
@@ -97,7 +97,7 @@ export const JUSTICES: Justice[] = [
     },
     confirmationVoteTotal: 54,
     partisanIndex: 1,
-    imageLink: "",
+    imageLink: "/src/assets/NG.jpeg",
   },
   {
     name: "Brett Kavanaugh",
@@ -108,7 +108,7 @@ export const JUSTICES: Justice[] = [
     },
     confirmationVoteTotal: 50,
     partisanIndex: 1,
-    imageLink: "",
+    imageLink: "/src/assets/BK.jpeg",
   },
 ];
 
