@@ -7,7 +7,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        'josefin-sans': ["Josefin Sans", "cursive"],
+        'josefin-sans': ["Josefin Sans", "sans-serif"],
+        "cardo": ["Cardo", "serif"]
       }
     },
   },

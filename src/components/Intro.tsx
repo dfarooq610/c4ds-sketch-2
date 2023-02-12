@@ -4,7 +4,7 @@ interface IntroProps {
 
 const Intro = ({ handleClick }: IntroProps) => {
   return (
-    <section className="text-xl text-center m-auto flex flex-col justify-center max-w-prose items-center">
+    <section className="font-cardo text-xl text-center m-auto flex flex-col justify-center max-w-prose items-center">
       <img src="SCOTUS.png" />
       <p>
         Too often, we only let the big moments define our perception of public
@@ -24,7 +24,7 @@ const Intro = ({ handleClick }: IntroProps) => {
       <div>
         {/* button transitions retrieved from https://tailwind-elements.com/docs/standard/components/buttons/ */}
         <button
-          className="border-2 border-solid bg-stone-600 p-2 text-stone-100 rounded-full border-stone-700 max-w-fit active:bg-stone-700 active:shadow-lg transition duration-150 ease-in-out "
+          className="font-josefin-sans border-2 border-solid bg-stone-600 p-2 text-stone-100 rounded-full border-stone-700 max-w-fit active:bg-stone-700 active:shadow-lg transition duration-150 ease-in-out "
           onClick={handleClick}
         >
           {"> "} Test your perceptions now

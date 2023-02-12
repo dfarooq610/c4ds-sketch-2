@@ -1,16 +1,21 @@
+import { Justice } from "../../services/Justice";
+
 interface JusticeProfileProps {
   selected: boolean;
-  imageLink: string;
+  justice: Justice;
+  perceivedPartisanIndex: number | null;
 }
 
-const JusticeProfile = ({ selected, imageLink }: JusticeProfileProps) => {
+const JusticeProfile = ({ selected, justice }: JusticeProfileProps) => {
   return (
+    <div>
       <img
-        src={imageLink}
-        className={`rounded-full w-3/5 h-3/5 object-cover ${
-          selected ? "border-8 border-solid border-stone-500" : ""
+        src={justice.imageLink}
+        className={`m-auto rounded-full object-cover border-8 border-solid ${
+          selected ? "border-stone-500" : "border-transparent"
         }`}
       />
+    </div>
   );
 };
 
