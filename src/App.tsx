@@ -1,4 +1,4 @@
-import { ArticleApp } from "./components/ArticleApp";
+import { Intro } from "./components/ArticleApp";
 
 function App() {
   return (
@@ -10,7 +10,7 @@ function App() {
         <hr className="bg-black h-1 mt-1 mb-3" />
       </header>
       <main className="grow mt-2 mx-10 my-5 basis-10/12 flex flex-col">
-        <ArticleApp />
+        <Intro />
       </main>
       <footer className="bg-stone-300 align-middle justify-center basis-1/12">
         <p className="text-normal text-center my-5">

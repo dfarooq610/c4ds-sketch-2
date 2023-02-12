@@ -1,13 +1,13 @@
 import { useState } from "react";
 
-export const ArticleApp = () => {
+export const Intro = () => {
   const [enteredMainArticle, setEnteredMainArticle] = useState<boolean>(false);
 
   const handleClick = () => setEnteredMainArticle(true);
 
   return (
     <section className="grow text-xl text-center m-auto flex flex-col justify-center max-w-prose items-center">
-        <img src="SCOTUS.png"/>
+      <img src="SCOTUS.png" />
       <p>
         Too often, we only let the big moments define our perception of public
         figures. For the Supreme Court Justices, that comes in the form of media
