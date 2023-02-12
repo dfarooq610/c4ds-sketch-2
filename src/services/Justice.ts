@@ -22,7 +22,7 @@ export const JUSTICES: Justice[] = [
     nominatedBy: "President Biden",
     confirmationVoteTotal: 53,
     partisanIndex: 1,
-    imageLink: "/src/assets/KBJ.png",
+    imageLink: "./src/assets/KBJ.png",
   },
   {
     name: "Clarence Thomas",
@@ -34,7 +34,7 @@ export const JUSTICES: Justice[] = [
     nominatedBy: "President H.W. Bush",
     confirmationVoteTotal: 52,
     partisanIndex: 1,
-    imageLink: "/src/assets/CT.png",
+    imageLink: "./src/assets/CT.png",
   },
   {
     name: "Samuel Alito",
@@ -46,7 +46,7 @@ export const JUSTICES: Justice[] = [
     confirmationVoteTotal: 58,
     nominatedBy: "President Bush",
     partisanIndex: 1,
-    imageLink: "/src/assets/SA.png",
+    imageLink: "./src/assets/SA.png",
   },
   {
     name: "John Roberts",
@@ -58,7 +58,7 @@ export const JUSTICES: Justice[] = [
     nominatedBy: "President Bush",
     confirmationVoteTotal: 78,
     partisanIndex: 1,
-    imageLink: "/src/assets/JR.png",
+    imageLink: "./src/assets/JR.png",
   },
   {
     name: "Sonia Sotomayor",
@@ -70,7 +70,7 @@ export const JUSTICES: Justice[] = [
     nominatedBy: "President Obama",
     confirmationVoteTotal: 68,
     partisanIndex: 1,
-    imageLink: "/src/assets/SS.png",
+    imageLink: "./src/assets/SS.png",
   },
   {
     name: "Elena Kagan",
@@ -82,7 +82,7 @@ export const JUSTICES: Justice[] = [
     nominatedBy: "President Obama",
     confirmationVoteTotal: 63,
     partisanIndex: 1,
-    imageLink: "/src/assets/EK.png",
+    imageLink: "./src/assets/EK.png",
   },
   {
     name: "Amy Coney Barett",
@@ -94,7 +94,7 @@ export const JUSTICES: Justice[] = [
     nominatedBy: "President Trump",
     confirmationVoteTotal: 52,
     partisanIndex: 1,
-    imageLink: "/src/assets/ACB.png",
+    imageLink: "./src/assets/ACB.png",
   },
   {
     name: "Neil Gorsuch",
@@ -106,7 +106,7 @@ export const JUSTICES: Justice[] = [
     nominatedBy: "President Trump",
     confirmationVoteTotal: 54,
     partisanIndex: 1,
-    imageLink: "/src/assets/NG.png",
+    imageLink: "./src/assets/NG.png",
   },
   {
     name: "Brett Kavanaugh",
@@ -118,17 +118,11 @@ export const JUSTICES: Justice[] = [
     nominatedBy: "President Trump",
     confirmationVoteTotal: 50,
     partisanIndex: 1,
-    imageLink: "/src/assets/BK.png",
+    imageLink: "./src/assets/BK.png",
   },
 ];
 
 export const generateJusticeSummary = (justice: Justice): string => {
-  return `Justice ${justice.name.split(" ").pop()} was nominated in ${
-    justice.yearNominated
-  } by ${justice.nominatedBy} and confirmed in a ${
-    justice.senateMajority.seats
-  } seat 
-  ${justice.senateMajority.controlParty}-controlled Senate with ${
-    justice.confirmationVoteTotal
-  } votes.`;
+  return `Justice ${justice.name.split(" ").pop()} was nominated in ${justice.yearNominated} by ${justice.nominatedBy} and confirmed in a ${justice.senateMajority.seats} seat 
+  ${justice.senateMajority.controlParty}-controlled Senate with ${justice.confirmationVoteTotal} votes.`;
 };
