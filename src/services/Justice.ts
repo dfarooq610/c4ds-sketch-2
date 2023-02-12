@@ -1,5 +1,5 @@
 import ACBUrl from "/src/assets/ACB.png";
-import KBJUrl from "/src/assets/ACB.png";
+import KBJUrl from "/src/assets/KBJ.png";
 import NGUrl from "/src/assets/NG.png";
 import BKUrl from "/src/assets/BK.png";
 import SAUrl from "/src/assets/SA.png";
