@@ -22,12 +22,26 @@ const JusticeSelector = ({
   const swiperRef = useRef<SwiperType>();
 
   return (
-    <div className="flex flex-row space-between justify-center align-middle">
+    <div className="flex flex-row space-between justify-center">
       <button
-        className="my-auto mx-4 font-josefin-sans text-7xl bg-stone-400 rounded-full h-fit w-fit"
+        type="button"
+        className="text-white bg-stone-600 font-medium m-auto rounded-full text-sm p-2.5 text-center inline-flex items-center mr-2 w-fit h-fit"
         onClick={() => swiperRef.current?.slidePrev()}
       >
-        {"<"}
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          strokeWidth={1.5}
+          stroke="currentColor"
+          className="w-6 h-6"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"
+          />
+        </svg>
       </button>
       <Swiper
         breakpoints={{
@@ -37,7 +51,7 @@ const JusticeSelector = ({
             spaceBetween: 20,
           },
           // when window width is >= 480px
-          480: {
+          500: {
             slidesPerView: 3,
             spaceBetween: 30,
           },
@@ -72,10 +86,24 @@ const JusticeSelector = ({
         })}
       </Swiper>
       <button
-        className="my-auto mx-4 font-josefin-sans text-7xl bg-stone-400 rounded-full h-fit w-fit"
+        type="button"
+        className="text-white bg-stone-600 font-medium m-auto rounded-full text-sm p-2.5 text-center inline-flex items-center ml-2 w-fit h-fit"
         onClick={() => swiperRef.current?.slideNext()}
       >
-        {">"}
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          strokeWidth={1.5}
+          stroke="currentColor"
+          className="w-6 h-6"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
+          />
+        </svg>
       </button>
     </div>
   );
