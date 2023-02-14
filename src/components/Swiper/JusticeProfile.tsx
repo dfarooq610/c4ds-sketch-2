@@ -12,7 +12,7 @@ const JusticeProfile = ({ selected, justice }: JusticeProfileProps) => {
       <img
         src={justice.imageLink}
         className={`m-auto rounded-full object-cover border-8 border-solid ${
-          selected ? "border-stone-400" : "border-transparent"
+          selected ? "border-stone-400" : "border-transparent opacity-30"
         }`}
       />
     </div>

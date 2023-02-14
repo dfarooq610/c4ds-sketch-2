@@ -11,6 +11,7 @@ import JRUrl from "/src/assets/JR.png";
 export type Justice = {
   name: string;
   yearNominated: number;
+  leaning: "Conservative" | "Liberal";
   senateMajority: {
     seats: number;
     controlParty: "Democrat" | "Republican";
@@ -35,6 +36,7 @@ export const JUSTICES: Justice[] = [
     },
     nominatedBy: "President Biden",
     confirmationVoteTotal: 53,
+    leaning: "Liberal",
     partisanIndex: {
       mqScore: 0,
       mabScore: 0,
@@ -51,6 +53,7 @@ export const JUSTICES: Justice[] = [
     },
     confirmationVoteTotal: 58,
     nominatedBy: "President W. Bush",
+    leaning: "Conservative",
     partisanIndex: {
       mqScore: 0,
       mabScore: 0,
@@ -66,6 +69,7 @@ export const JUSTICES: Justice[] = [
       controlParty: "Republican",
     },
     nominatedBy: "President W. Bush",
+    leaning: "Conservative",
     confirmationVoteTotal: 78,
     partisanIndex: {
       mqScore: 0,
@@ -81,6 +85,7 @@ export const JUSTICES: Justice[] = [
       seats: 59,
       controlParty: "Democrat",
     },
+    leaning: "Liberal",
     nominatedBy: "President Obama",
     confirmationVoteTotal: 68,
     partisanIndex: {
@@ -97,6 +102,7 @@ export const JUSTICES: Justice[] = [
       seats: 59,
       controlParty: "Democrat",
     },
+    leaning: "Liberal",
     nominatedBy: "President Obama",
     confirmationVoteTotal: 63,
     partisanIndex: {
@@ -113,6 +119,7 @@ export const JUSTICES: Justice[] = [
       seats: 53,
       controlParty: "Republican",
     },
+    leaning: "Conservative",
     nominatedBy: "President Trump",
     confirmationVoteTotal: 52,
     partisanIndex: {
@@ -129,6 +136,7 @@ export const JUSTICES: Justice[] = [
       seats: 56,
       controlParty: "Democrat",
     },
+    leaning: "Conservative",
     nominatedBy: "President H.W. Bush",
     confirmationVoteTotal: 52,
     partisanIndex: {
@@ -145,6 +153,7 @@ export const JUSTICES: Justice[] = [
       seats: 51,
       controlParty: "Democrat",
     },
+    leaning: "Conservative",
     nominatedBy: "President Trump",
     confirmationVoteTotal: 54,
     partisanIndex: {
@@ -161,6 +170,7 @@ export const JUSTICES: Justice[] = [
       seats: 51,
       controlParty: "Republican",
     },
+    leaning: "Conservative",
     nominatedBy: "President Trump",
     confirmationVoteTotal: 50,
     partisanIndex: {
