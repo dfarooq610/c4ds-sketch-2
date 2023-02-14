@@ -21,11 +21,12 @@ const Article = () => {
       {currentJustice && (
         <div className="text-center align-middle justify-center mt-4 mb-2">
           <h2 className="font-josefin-sans font-bold text-2xl">{currentJustice.name}</h2>
-          <p className="font-cardo max-w-prose m-auto text-lg">
+          <p className="font-cardo text-lg max-w-prose m-auto">
             {generateJusticeSummary(currentJustice)}
           </p>
         </div>
       )}
+      
       {partisanIndex && <h1>HELLO</h1>}
     </div>
   );

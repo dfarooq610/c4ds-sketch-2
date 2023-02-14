@@ -17,7 +17,11 @@ export type Justice = {
   };
   nominatedBy: string;
   confirmationVoteTotal: number;
-  partisanIndex: number;
+  partisanIndex: {
+    mqScore: number,
+    mabScore: number,
+    segalScore: number
+  };
   imageLink: string;
 };
 
@@ -31,20 +35,12 @@ export const JUSTICES: Justice[] = [
     },
     nominatedBy: "President Biden",
     confirmationVoteTotal: 53,
-    partisanIndex: 1,
-    imageLink: KBJUrl,
-  },
-  {
-    name: "Clarence Thomas",
-    yearNominated: 1991,
-    senateMajority: {
-      seats: 56,
-      controlParty: "Democrat",
+    partisanIndex: {
+      mqScore: 0,
+      mabScore: 0,
+      segalScore: 0
     },
-    nominatedBy: "President H.W. Bush",
-    confirmationVoteTotal: 52,
-    partisanIndex: 1,
-    imageLink: CTUrl,
+    imageLink: KBJUrl,
   },
   {
     name: "Samuel Alito",
@@ -54,8 +50,12 @@ export const JUSTICES: Justice[] = [
       controlParty: "Republican",
     },
     confirmationVoteTotal: 58,
-    nominatedBy: "President Bush",
-    partisanIndex: 1,
+    nominatedBy: "President W. Bush",
+    partisanIndex: {
+      mqScore: 0,
+      mabScore: 0,
+      segalScore: 0
+    },
     imageLink: SAUrl,
   },
   {
@@ -65,9 +65,13 @@ export const JUSTICES: Justice[] = [
       seats: 55,
       controlParty: "Republican",
     },
-    nominatedBy: "President Bush",
+    nominatedBy: "President W. Bush",
     confirmationVoteTotal: 78,
-    partisanIndex: 1,
+    partisanIndex: {
+      mqScore: 0,
+      mabScore: 0,
+      segalScore: 0
+    },
     imageLink: JRUrl,
   },
   {
@@ -79,7 +83,11 @@ export const JUSTICES: Justice[] = [
     },
     nominatedBy: "President Obama",
     confirmationVoteTotal: 68,
-    partisanIndex: 1,
+    partisanIndex: {
+      mqScore: 0,
+      mabScore: 0,
+      segalScore: 0
+    },
     imageLink: SSUrl,
   },
   {
@@ -91,7 +99,11 @@ export const JUSTICES: Justice[] = [
     },
     nominatedBy: "President Obama",
     confirmationVoteTotal: 63,
-    partisanIndex: 1,
+    partisanIndex: {
+      mqScore: 0,
+      mabScore: 0,
+      segalScore: 0
+    },
     imageLink: EKUrl,
   },
   {
@@ -103,8 +115,28 @@ export const JUSTICES: Justice[] = [
     },
     nominatedBy: "President Trump",
     confirmationVoteTotal: 52,
-    partisanIndex: 1,
+    partisanIndex: {
+      mqScore: 0,
+      mabScore: 0,
+      segalScore: 0
+    },
     imageLink: ACBUrl,
+  },
+  {
+    name: "Clarence Thomas",
+    yearNominated: 1991,
+    senateMajority: {
+      seats: 56,
+      controlParty: "Democrat",
+    },
+    nominatedBy: "President H.W. Bush",
+    confirmationVoteTotal: 52,
+    partisanIndex: {
+      mqScore: 0,
+      mabScore: 0,
+      segalScore: 0
+    },
+    imageLink: CTUrl,
   },
   {
     name: "Neil Gorsuch",
@@ -115,7 +147,11 @@ export const JUSTICES: Justice[] = [
     },
     nominatedBy: "President Trump",
     confirmationVoteTotal: 54,
-    partisanIndex: 1,
+    partisanIndex: {
+      mqScore: 0,
+      mabScore: 0,
+      segalScore: 0
+    },
     imageLink: NGUrl,
   },
   {
@@ -127,7 +163,11 @@ export const JUSTICES: Justice[] = [
     },
     nominatedBy: "President Trump",
     confirmationVoteTotal: 50,
-    partisanIndex: 1,
+    partisanIndex: {
+      mqScore: 0,
+      mabScore: 0,
+      segalScore: 0
+    },
     imageLink: BKUrl,
   },
 ];

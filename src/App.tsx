@@ -4,6 +4,7 @@ import Intro from "./components/Intro";
 
 function App() {
   const [enteredMainArticle, setEnteredMainArticle] = useState<boolean>(false);
+  
   return (
     <div className="bg-stone-100 h-fit-content min-h-screen min-w-full flex flex-col">
       <header className="font-josefin-sans mx-10 align-middle justify-center basis-1/12">
