@@ -10,7 +10,7 @@ import { JUSTICES } from "../../services/Justice";
 import { useRef } from "react";
 
 interface JusticeSelectorProps {
-  percievedPartisanIndex: number | null;
+  percievedPartisanIndex: number;
   onSlideTransition: (swiper: SwiperType) => void;
 }
 
