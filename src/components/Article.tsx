@@ -32,15 +32,15 @@ const Article = () => {
           type="range"
           step={0.5}
           value={partisanIndex}
-          className="slider w-full h-2 bg-stone-500 rounded-lg appearance-none cursor-pointer"
+          className="slider w-full h-3 bg-stone-500 rounded-lg appearance-none cursor-pointer"
           onChange={(e) => {
             setPartisanIndex(Number(e.target.value));
           }}
         ></input>
       </div>
-      <div className="font-josefin-sans flex justify-center items-center">
+      <div className="font-josefin-sans flex my-10 justify-center items-baseline">
         <button
-          className="bg-stone-600 text-stone-100 rounded-lg px-3 py-1 mx-3"
+          className="bg-stone-600 text-stone-100 rounded-lg px-5 text-2xl py-2 mx-5"
           onClick={() => {
             setShowResults(false);
             setPartisanIndex(50);
@@ -49,12 +49,12 @@ const Article = () => {
           Reset
         </button>
         <button
-          className="bg-stone-600 text-stone-100 rounded-lg px-3 py-1 mx-3"
+          className="bg-stone-600 text-stone-100 rounded-lg px-5 text-2xl py-2 mx-5"
           onClick={() => {
             setShowResults(true);
           }}
         >
-          Check Results
+          Results
         </button>
       </div>
       {showResults && <h1 className="font-josefin-sans text-3xl text-center mt-10">LOREM IPSUM</h1>}
