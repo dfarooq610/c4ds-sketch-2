@@ -9,7 +9,7 @@ function App() {
     <div className="bg-stone-100 h-fit-content min-h-screen min-w-full flex flex-col">
       <header className="font-josefin-sans mx-10 align-middle justify-center basis-1/12">
         <h1 className="text-4xl font-bold text-center mt-10 mb-5">
-          How do you perceive the partisanship of the Supreme Court?
+          How political is the Supreme Court?
         </h1>
         <hr className="bg-black h-1 mt-1 mb-3" />
       </header>

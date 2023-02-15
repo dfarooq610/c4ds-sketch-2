@@ -21,7 +21,6 @@ export type Justice = {
   partisanIndex: {
     mqScore: number,
     mabScore: number,
-    segalScore: number
   };
   imageLink: string;
 };
@@ -40,7 +39,6 @@ export const JUSTICES: Justice[] = [
     partisanIndex: {
       mqScore: 0,
       mabScore: 0,
-      segalScore: 0
     },
     imageLink: KBJUrl,
   },
@@ -52,12 +50,11 @@ export const JUSTICES: Justice[] = [
       controlParty: "Republican",
     },
     confirmationVoteTotal: 58,
-    nominatedBy: "President W. Bush",
     leaning: "Conservative",
+    nominatedBy: "President W. Bush",
     partisanIndex: {
-      mqScore: 0,
-      mabScore: 0,
-      segalScore: 0
+      mqScore: 2.06,
+      mabScore: 1.47,
     },
     imageLink: SAUrl,
   },
@@ -69,12 +66,11 @@ export const JUSTICES: Justice[] = [
       controlParty: "Republican",
     },
     nominatedBy: "President W. Bush",
-    leaning: "Conservative",
     confirmationVoteTotal: 78,
+    leaning: "Conservative",
     partisanIndex: {
-      mqScore: 0,
-      mabScore: 0,
-      segalScore: 0
+      mqScore: .70,
+      mabScore: .60,
     },
     imageLink: JRUrl,
   },
@@ -85,13 +81,12 @@ export const JUSTICES: Justice[] = [
       seats: 59,
       controlParty: "Democrat",
     },
-    leaning: "Liberal",
     nominatedBy: "President Obama",
     confirmationVoteTotal: 68,
+    leaning: "Liberal",
     partisanIndex: {
-      mqScore: 0,
-      mabScore: 0,
-      segalScore: 0
+      mqScore: -3.17,
+      mabScore: -1.17,
     },
     imageLink: SSUrl,
   },
@@ -102,13 +97,12 @@ export const JUSTICES: Justice[] = [
       seats: 59,
       controlParty: "Democrat",
     },
-    leaning: "Liberal",
     nominatedBy: "President Obama",
     confirmationVoteTotal: 63,
+    leaning: "Liberal",
     partisanIndex: {
-      mqScore: 0,
-      mabScore: 0,
-      segalScore: 0
+      mqScore: -1.64,
+      mabScore: -.72,
     },
     imageLink: EKUrl,
   },
@@ -119,13 +113,12 @@ export const JUSTICES: Justice[] = [
       seats: 53,
       controlParty: "Republican",
     },
-    leaning: "Conservative",
     nominatedBy: "President Trump",
     confirmationVoteTotal: 52,
+    leaning: "Conservative",
     partisanIndex: {
-      mqScore: 0,
+      mqScore: 1.28,
       mabScore: 0,
-      segalScore: 0
     },
     imageLink: ACBUrl,
   },
@@ -136,13 +129,12 @@ export const JUSTICES: Justice[] = [
       seats: 56,
       controlParty: "Democrat",
     },
-    leaning: "Conservative",
     nominatedBy: "President H.W. Bush",
     confirmationVoteTotal: 52,
+    leaning: "Conservative",
     partisanIndex: {
-      mqScore: 0,
-      mabScore: 0,
-      segalScore: 0
+      mqScore: 3.15,
+      mabScore: 1.47,
     },
     imageLink: CTUrl,
   },
@@ -153,13 +145,12 @@ export const JUSTICES: Justice[] = [
       seats: 51,
       controlParty: "Democrat",
     },
-    leaning: "Conservative",
     nominatedBy: "President Trump",
     confirmationVoteTotal: 54,
+    leaning: "Conservative",
     partisanIndex: {
-      mqScore: 0,
-      mabScore: 0,
-      segalScore: 0
+      mqScore: 1.06,
+      mabScore: 1.02,
     },
     imageLink: NGUrl,
   },
@@ -170,13 +161,12 @@ export const JUSTICES: Justice[] = [
       seats: 51,
       controlParty: "Republican",
     },
-    leaning: "Conservative",
     nominatedBy: "President Trump",
     confirmationVoteTotal: 50,
+    leaning: "Conservative",
     partisanIndex: {
-      mqScore: 0,
-      mabScore: 0,
-      segalScore: 0
+      mqScore: .69,
+      mabScore: .77,
     },
     imageLink: BKUrl,
   },
