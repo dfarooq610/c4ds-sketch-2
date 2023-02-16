@@ -3,12 +3,15 @@ import { ChangeEvent, useState } from "react";
 import JusticeSelector from "./Swiper/JusticeSelector";
 import Swiper from "swiper";
 import PartisanIndexSlider from "./PartisanIndexSelector/PartisanIndexSlider";
+import gradientURL from "../assets/GradientBar.png";
+import { Results } from "./Results/Results";
 
 const Article = () => {
   const [currentJustice, setCurrentJustice] = useState<Justice>(JUSTICES[0]);
   const [partisanIndex, setPartisanIndex] = useState<number>(50);
   const [showResults, setShowResults] = useState<boolean>(false);
-
+  // TODO: Justice Carosuel -- rename component, move summary from this file into component
+  // Range Selector - Own component
   return (
     <div>
       <JusticeSelector
@@ -31,8 +34,11 @@ const Article = () => {
         <input
           type="range"
           step={0.5}
+          min={0}
+          max={100}
           value={partisanIndex}
-          className="slider w-full h-3 bg-stone-500 rounded-lg appearance-none cursor-pointer"
+          // political blue and red exports from Color.ts -- could not figure out how to template styles as variables in tailwind
+          className="slider w-full h-5 bg-gradient-to-r from-[#244999] via-stone-400 to-[#d22532] rounded-lg appearance-none cursor-pointer"
           onChange={(e) => {
             setPartisanIndex(Number(e.target.value));
           }}
@@ -46,7 +52,7 @@ const Article = () => {
             setPartisanIndex(50);
           }}
         >
-          Reset
+          Reset Slider
         </button>
         <button
           className="bg-stone-600 text-stone-100 rounded-lg px-5 text-2xl py-2 mx-5"
@@ -54,10 +60,12 @@ const Article = () => {
             setShowResults(true);
           }}
         >
-          Results
+          Show Results
         </button>
       </div>
-      {showResults && <h1 className="font-josefin-sans text-3xl text-center mt-10">LOREM IPSUM</h1>}
+      {showResults && (
+        <Results justice={currentJustice} chosenPartisanIndex={partisanIndex}/>
+      )}
     </div>
   );
 };

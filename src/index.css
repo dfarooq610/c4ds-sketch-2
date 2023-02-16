@@ -4,19 +4,19 @@
 
 /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
 .slider::-webkit-slider-thumb {
-    -webkit-appearance: none; /* Override default look */
-    appearance: none;
-    border-radius: 100%;
-    width: 25px; /* Set a specific slider handle width */
-    height: 25px; /* Slider handle height */
-    background: rgb(28, 25, 23); 
-    cursor: pointer; /* Cursor on hover */
-  }
-  
-  .slider::-moz-range-thumb {
-    width: 25px; /* Set a specific slider handle width */
-    height: 25px; /* Slider handle height */
-    border-radius: 100%;
-    background: rgb(28, 25, 23);
-    cursor: pointer; /* Cursor on hover */
-  }
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  border-radius: 100%;
+  width: 25px; /* Set a specific slider handle width */
+  height: 25px; /* Slider handle height */
+  background: rgb(28, 25, 23);
+  cursor: pointer; /* Cursor on hover */
+}
+
+.slider::-moz-range-thumb {
+  width: 25px; /* Set a specific slider handle width */
+  height: 25px; /* Slider handle height */
+  border-radius: 100%;
+  background: rgb(28, 25, 23);
+  cursor: pointer; /* Cursor on hover */
+}

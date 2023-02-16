@@ -19,8 +19,8 @@ export type Justice = {
   nominatedBy: string;
   confirmationVoteTotal: number;
   partisanIndex: {
-    mqScore: number,
-    mabScore: number,
+    mqScore: number;
+    mabScore: number;
   };
   imageLink: string;
 };
@@ -69,8 +69,8 @@ export const JUSTICES: Justice[] = [
     confirmationVoteTotal: 78,
     leaning: "Conservative",
     partisanIndex: {
-      mqScore: .70,
-      mabScore: .60,
+      mqScore: 0.7,
+      mabScore: 0.6,
     },
     imageLink: JRUrl,
   },
@@ -102,7 +102,7 @@ export const JUSTICES: Justice[] = [
     leaning: "Liberal",
     partisanIndex: {
       mqScore: -1.64,
-      mabScore: -.72,
+      mabScore: -0.72,
     },
     imageLink: EKUrl,
   },
@@ -165,8 +165,8 @@ export const JUSTICES: Justice[] = [
     confirmationVoteTotal: 50,
     leaning: "Conservative",
     partisanIndex: {
-      mqScore: .69,
-      mabScore: .77,
+      mqScore: 0.69,
+      mabScore: 0.77,
     },
     imageLink: BKUrl,
   },
@@ -182,3 +182,45 @@ export const generateJusticeSummary = (justice: Justice): string => {
     justice.confirmationVoteTotal
   } votes.`;
 };
+
+export const compareJusticePartisanship = (
+  justice: Justice,
+  selectedPartisanship: number
+): string => {
+  if (justice.partisanIndex.mqScore === 0) {
+    return `We do not have enough data to quantify the partisanship of Justice ${justice.name
+      .split(" ")
+      .pop()}`;
+  }
+
+  // selectedPartisanship in [0,100], scaled to fit range of MQ on 120 point scale (because float comparison is scary)
+  let scaledUserScore = (selectedPartisanship / 100) * 120;
+  // MQ score translated to positive numbers for comparison (on 120 point scale bc float comparison is scary)
+  let shiftedMQ = (justice.partisanIndex.mqScore + 6) * 10;
+
+  let comparison;
+  // within a 10% delta (1.2 points)
+  if (scaledUserScore - shiftedMQ < 12) {
+    comparison = "about as";
+  } else {
+    switch (justice.leaning) {
+      case "Conservative":
+        comparison = scaledUserScore > shiftedMQ ? "more" : "less";
+        break;
+      case "Liberal":
+        comparison = scaledUserScore > shiftedMQ ? "less" : "more";
+        break;
+    }
+  }
+  return `Justice ${justice.name.split(" ").pop()} is ${comparison} ${
+    justice.leaning
+  } as you have indicated.`;
+};
+
+export const convertToMQ = (score: number): number => {
+  return ((score / 100) * 12) - 6;
+}
+
+export const convertToBailey = (score: number): number => {
+  return ((score / 100) * 6) - 3;
+}

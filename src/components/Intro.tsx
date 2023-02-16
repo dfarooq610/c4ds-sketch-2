@@ -25,7 +25,7 @@ const Intro = ({ handleClick }: IntroProps) => {
       <div>
         {/* button transitions retrieved from https://tailwind-elements.com/docs/standard/components/buttons/ */}
         <button
-          className="font-josefin-sans border-2 border-solid bg-stone-600 p-2 text-stone-100 rounded-full border-stone-700 max-w-fit active:bg-stone-700 active:shadow-lg transition duration-150 ease-in-out "
+          className="font-josefin-sans border-2 border-solid bg-stone-600 p-2 text-stone-100 rounded-full border-stone-900 max-w-fit active:bg-stone-700 active:shadow-lg transition duration-150 ease-in-out "
           onClick={handleClick}
         >
           {"> "} Let's find out
