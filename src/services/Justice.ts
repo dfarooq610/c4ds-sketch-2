@@ -57,7 +57,7 @@ export const JUSTICES: Justice[] = [
     nominatedBy: "President W. Bush",
     partisanIndex: {
       mqScore: 2.06,
-      mabScore: 1.47,
+      mabScore: 1.15,
     },
     imageLink: SAUrl,
     summary:
