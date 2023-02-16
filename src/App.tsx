@@ -4,12 +4,12 @@ import Intro from "./components/Intro";
 
 function App() {
   const [enteredMainArticle, setEnteredMainArticle] = useState<boolean>(false);
-  
+
   return (
     <div className="bg-stone-100 h-fit-content min-h-screen min-w-full flex flex-col">
       <header className="font-josefin-sans mx-10 align-middle justify-center basis-1/12">
         <h1 className="text-4xl font-bold text-center mt-10 mb-5">
-          How political is the Supreme Court?
+          How partisan are US Supreme Court Justices?
         </h1>
         <hr className="bg-black h-1 mt-1 mb-3" />
       </header>

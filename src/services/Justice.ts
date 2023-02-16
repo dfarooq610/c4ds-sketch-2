@@ -187,10 +187,10 @@ export const compareJusticePartisanship = (
   justice: Justice,
   selectedPartisanship: number
 ): string => {
-  if (justice.partisanIndex.mqScore === 0) {
-    return `We do not have enough data to quantify the partisanship of Justice ${justice.name
-      .split(" ")
-      .pop()}`;
+  if (justice.partisanIndex.mqScore === 0 || justice.partisanIndex.mabScore === 0) {
+    return `We do not have enough data to quantify the partisanship of ${getProfessionalJusticeName(
+      justice
+    )}`;
   }
 
   // selectedPartisanship in [0,100], scaled to fit range of MQ on 120 point scale (because float comparison is scary)
@@ -198,9 +198,11 @@ export const compareJusticePartisanship = (
   // MQ score translated to positive numbers for comparison (on 120 point scale bc float comparison is scary)
   let shiftedMQ = (justice.partisanIndex.mqScore + 6) * 10;
 
+  console.log(scaledUserScore, shiftedMQ);
+
   let comparison;
-  // within a 10% delta (1.2 points)
-  if (scaledUserScore - shiftedMQ < 12) {
+  // within a 5% delta (0.6 points)
+  if (Math.abs(scaledUserScore - shiftedMQ) < 6) {
     comparison = "about as";
   } else {
     switch (justice.leaning) {
@@ -212,15 +214,19 @@ export const compareJusticePartisanship = (
         break;
     }
   }
-  return `Justice ${justice.name.split(" ").pop()} is ${comparison} ${
-    justice.leaning
-  } as you have indicated.`;
+  return `${getProfessionalJusticeName(justice)} is ${comparison} ${
+    justice.leaning.toLowerCase()
+  } than you have indicated.`;
 };
 
 export const convertToMQ = (score: number): number => {
-  return ((score / 100) * 12) - 6;
-}
+  return (score / 100) * 12 - 6;
+};
 
 export const convertToBailey = (score: number): number => {
-  return ((score / 100) * 6) - 3;
-}
+  return (score / 100) * 6 - 3;
+};
+
+export const getProfessionalJusticeName = (justice: Justice) => {
+  return `Justice ${justice.name.split(" ").pop()}`;
+};
