@@ -11,7 +11,6 @@ const Article = () => {
   const [showResults, setShowResults] = useState<boolean>(false);
   // TODO: Justice Carosuel -- rename component, move summary from this file into component
   // Range Selector - Own component
-  // political labels on opposite ends of slider
   // update slider breakpoints
   return (
     <div className="font-josefin-sans">
@@ -29,7 +28,8 @@ const Article = () => {
           {generateJusticeSummary(currentJustice)}
         </p>
       </div>
-      <div className="m-auto my-5 max-w-prose">
+      <div className="mx-auto my-5 max-w-prose flex justify-center align-baseline">
+        <p className="text-center mr-2">More Liberal</p>
         <input
           type="range"
           step={0.5}
@@ -38,11 +38,12 @@ const Article = () => {
           disabled={showResults}
           value={partisanIndex}
           // political blue and red exports from Color.ts -- could not figure out how to template styles as variables in tailwind
-          className="slider w-full h-5 bg-gradient-to-r from-[#244999] via-stone-400 to-[#d22532] rounded-lg appearance-none cursor-pointer"
+          className="slider w-full h-5 bg-gradient-to-r from-[#244999] via-stone-400 to-[#d22532] rounded-lg appearance-none cursor-pointer m-auto"
           onChange={(e) => {
             setPartisanIndex(Number(e.target.value));
           }}
         ></input>
+         <p className="text-center ml-2">More Conservative</p>
       </div>
       {!showResults ? (
         <div className="font-josefin-sans flex my-10 justify-center items-baseline">

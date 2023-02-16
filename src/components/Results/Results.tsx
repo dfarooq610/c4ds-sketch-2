@@ -17,14 +17,17 @@ export const Results = ({ justice, chosenPartisanIndex }: ResultsProps) => {
   const titleText = compareJusticePartisanship(justice, chosenPartisanIndex);
 
   return (
-    <section className="flex-row w-3/4 mx-auto justify-center font-cardo text-lg">
-      <h1 className="font-josefin-sans mb-3 text-3xl font-bold">{titleText}</h1>
-      <h3 className="font-josefin-sans mb-3 text-xl font-bold">
-        {`About ${getProfessionalJusticeName(justice)}`}
-      </h3>
-      <p>{}</p>
+    <section className="flex-row w-4/5 mx-auto justify-center font-cardo text-lg">
+      <h1 className="font-josefin-sans mb-3 text-3xl font-bold text-center">
+        {titleText}
+      </h1>
+      <p>{justice.summary}</p>
+      <br/>
       {hasConclusiveScore && (
         <div>
+          <h3 className="font-josefin-sans mb-3 text-xl font-bold">
+            {`Quantifying ${getProfessionalJusticeName(justice)}'s Partisanship`}
+          </h3>
           <p>
             There are a few different statistical measures that analyze the
             ideological leanings of the Supreme Court justices. The most well
