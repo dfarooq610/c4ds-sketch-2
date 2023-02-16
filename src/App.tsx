@@ -21,7 +21,7 @@ function App() {
         )}
       </main>
       <footer className="font-cardo bg-stone-300 align-middle justify-center basis-1/12">
-        <p className="text-normal text-center my-5">
+        <p className="text-normal text-center mx-3 my-5">
           A project by Danish Farooq and Gabriel Cohen for JRNL 5500: Coding for
           Digital Storytelling
         </p>

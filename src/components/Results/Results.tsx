@@ -9,15 +9,20 @@ import {
 interface ResultsProps {
   chosenPartisanIndex: number;
   justice: Justice;
+  resetButtonHandler: () => void;
 }
 
-export const Results = ({ justice, chosenPartisanIndex }: ResultsProps) => {
+export const Results = ({
+  justice,
+  chosenPartisanIndex,
+  resetButtonHandler,
+}: ResultsProps) => {
   const hasConclusiveScore =
     justice.partisanIndex.mabScore !== 0 && justice.partisanIndex.mqScore !== 0;
   const titleText = compareJusticePartisanship(justice, chosenPartisanIndex);
 
   return (
-    <section className="flex-row lg:w-3/4 mx-auto justify-center font-cardo lg:text-lg">
+    <section className="flex flex-col lg:w-3/4 mx-auto justify-center font-cardo lg:text-lg">
       <h1 className="font-josefin-sans mb-3 mt-10 text-2xl lg:text-3xl font-bold text-center">
         {titleText}
       </h1>
@@ -82,6 +87,12 @@ export const Results = ({ justice, chosenPartisanIndex }: ResultsProps) => {
           </p>
         </div>
       )}
+      <button
+        className="bg-stone-600 text-stone-100 rounded-lg px-5 text-2xl py-2 mx-auto my-6 max-w-md font-josefin-sans"
+        onClick={resetButtonHandler}
+      >
+        Try Again
+      </button>
     </section>
   );
 };

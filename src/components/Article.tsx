@@ -66,21 +66,14 @@ const Article = () => {
           </button>
         </div>
       ) : (
-        <div className="flex flex-col justify-center">
-          <Results
-            justice={currentJustice}
-            chosenPartisanIndex={partisanIndex}
-          />
-          <button
-            className="bg-stone-600 text-stone-100 rounded-lg px-5 text-2xl py-2 mx-auto my-6 max-w-md"
-            onClick={() => {
-              setShowResults(false);
-              setPartisanIndex(50);
-            }}
-          >
-            Guess Again
-          </button>
-        </div>
+        <Results
+          justice={currentJustice}
+          chosenPartisanIndex={partisanIndex}
+          resetButtonHandler={() => {
+            setShowResults(false);
+            setPartisanIndex(50);
+          }}
+        />
       )}
     </div>
   );
