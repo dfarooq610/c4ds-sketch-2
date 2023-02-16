@@ -4,7 +4,7 @@ interface IntroProps {
 
 const Intro = ({ handleClick }: IntroProps) => {
   return (
-    <section className="font-josefin-sans text-xl m-auto flex flex-col justify-center max-w-prose items-center">
+    <section className="font-josefin-sans lg:text-xl m-auto flex flex-col justify-center max-w-prose items-center">
       <img src="SCOTUS.png" />
       <div className="font-cardo">
         <p>

@@ -168,7 +168,7 @@ export const JUSTICES: Justice[] = [
       mabScore: 1.02,
     },
     imageLink: NGUrl,
-    summary: "\n",
+    summary: "Justice Neil Gorsuch is to the right of Chief Justice Roberts and Justice Kavanaugh and to the left of Justices Thomas and Alito. Where he falls compared to Justice Barrett is unknown at the time. \n\nJustice Gorsuch is consistent, one can say that much at least. Gorsuch fashions himself as a Western Libertarian. He has a deep hatred and mistrust of the administrative state, favors business over regulation—management over workers—and, perhaps counterintuitively, is a staunch defender of indigenous sovereignty.  The first justice nominated by Trump—after the Republican Senate held the seat hostage for nine months—Justice Gorsuch is quickly becoming known for his clear and illuminating writing; however, that lucidity hides some disingenuous jurisprudence–see Epic Systems Corp. v. Lewis (2018). Like most on the Court, including all Republicans, Gorsuch claims to be a textualist and originalist. He sometimes invokes corpus linguistics—used to determine the ordinary meaning of statutes—in his opinions. One such instance is his well known Bostock v. Clayton County (2020) opinion, in which he points to the word ‘sex’ in Title VII of the Civil Rights Act to represent homosexual and transgender individuals, thus protecting them from employment discrimination. He was joined in the majority by all the liberal justices and Chief Justice Roberts. Cases like this are often held up as examples of a justice’s principles and objectivity in order for them to justify more controversial opinions that are harder to square with originalism and textualism. Armor from being labeled a hack. \n",
   },
   {
     name: "Brett Kavanaugh",
@@ -209,11 +209,9 @@ export const compareJusticePartisanship = (
     justice.partisanIndex.mqScore === 0 ||
     justice.partisanIndex.mabScore === 0
   ) {
-    return `Although ${getProfessionalJusticeName(
+    return `Although nominated as a ${justice.leaning.toLowerCase()}, ${getProfessionalJusticeName(
       justice
-    )} is projected to be ${
-      justice.leaning
-    } based on their nomination, there is not enough data to quantify their decision history`;
+    )}'s partisanship is inconclusive due to limited tenure`;
   }
 
   // selectedPartisanship in [0,100], scaled to fit range of MQ on 120 point scale (because float comparison is scary)
@@ -221,11 +219,9 @@ export const compareJusticePartisanship = (
   // MQ score translated to positive numbers for comparison (on 120 point scale bc float comparison is scary)
   let shiftedMQ = (justice.partisanIndex.mqScore + 6) * 10;
 
-  console.log(scaledUserScore, shiftedMQ);
-
   let comparison;
   // within a 5% delta (0.6 points)
-  if (Math.abs(scaledUserScore - shiftedMQ) < 6) {
+  if (Math.abs(scaledUserScore - shiftedMQ) < 5) {
     comparison = "about as";
   } else {
     switch (justice.leaning) {

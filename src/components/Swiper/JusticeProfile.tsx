@@ -19,7 +19,7 @@ const JusticeProfile = ({
     <div>
       <img
         src={justice.imageLink}
-        className={"m-auto rounded-full object-cover border-[1rem] border-solid"}
+        className={"m-auto rounded-full object-cover lg:border-[1rem] border-8 border-solid"}
         // tailwind is limited in that it cannot easily handle dynamic colors (since styles are compile time generated)
         style={{
           borderColor: selected

@@ -17,16 +17,18 @@ export const Results = ({ justice, chosenPartisanIndex }: ResultsProps) => {
   const titleText = compareJusticePartisanship(justice, chosenPartisanIndex);
 
   return (
-    <section className="flex-row w-4/5 mx-auto justify-center font-cardo text-lg">
-      <h1 className="font-josefin-sans mb-3 text-3xl font-bold text-center">
+    <section className="flex-row lg:w-3/4 mx-auto justify-center font-cardo lg:text-lg">
+      <h1 className="font-josefin-sans mb-3 mt-10 text-2xl lg:text-3xl font-bold text-center">
         {titleText}
       </h1>
       <p>{justice.summary}</p>
-      <br/>
+      <br />
       {hasConclusiveScore && (
         <div>
           <h3 className="font-josefin-sans mb-3 text-xl font-bold">
-            {`Quantifying ${getProfessionalJusticeName(justice)}'s Partisanship`}
+            {`Quantifying ${getProfessionalJusticeName(
+              justice
+            )}'s Partisanship`}
           </h3>
           <p>
             There are a few different statistical measures that analyze the

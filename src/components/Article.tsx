@@ -2,7 +2,6 @@ import { generateJusticeSummary, Justice, JUSTICES } from "../services/Justice";
 import { useState } from "react";
 import JusticeSelector from "./Swiper/JusticeSelector";
 import Swiper from "swiper";
-import PartisanIndexSlider from "./PartisanIndexSelector/PartisanIndexSlider";
 import { Results } from "./Results/Results";
 
 const Article = () => {
@@ -28,8 +27,7 @@ const Article = () => {
           {generateJusticeSummary(currentJustice)}
         </p>
       </div>
-      <div className="mx-auto my-5 max-w-prose flex justify-center align-baseline">
-        <p className="text-center mr-2">More Liberal</p>
+      <div className="mx-auto my-5 max-w-prose flex-col justify-center align-baseline">
         <input
           type="range"
           step={0.5}
@@ -43,7 +41,10 @@ const Article = () => {
             setPartisanIndex(Number(e.target.value));
           }}
         ></input>
-         <p className="text-center ml-2">More Conservative</p>
+        <div className="flex justify-between align-middle">
+          <p className="text-center mr-2">Liberal</p>
+          <p className="text-center ml-2">Conservative</p>
+        </div>
       </div>
       {!showResults ? (
         <div className="font-josefin-sans flex my-10 justify-center items-baseline">
