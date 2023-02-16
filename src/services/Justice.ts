@@ -233,7 +233,7 @@ export const compareJusticePartisanship = (
         comparison = scaledUserScore < shiftedMQ ? "more" : "less";
         break;
       case "Liberal":
-        comparison = scaledUserScore > shiftedMQ ? "less" : "more";
+        comparison = scaledUserScore < shiftedMQ ? "less" : "more";
         break;
     }
   }
