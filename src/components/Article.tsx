@@ -8,9 +8,6 @@ const Article = () => {
   const [currentJustice, setCurrentJustice] = useState<Justice>(JUSTICES[0]);
   const [partisanIndex, setPartisanIndex] = useState<number>(50);
   const [showResults, setShowResults] = useState<boolean>(false);
-  // TODO: Justice Carosuel -- rename component, move summary from this file into component
-  // Range Selector - Own component
-  // update slider breakpoints
   return (
     <div className="font-josefin-sans">
       <JusticeSelector
@@ -49,7 +46,7 @@ const Article = () => {
       {!showResults ? (
         <div className="font-josefin-sans flex my-10 justify-center items-baseline">
           <button
-            className="bg-stone-600 text-stone-100 rounded-lg px-5 text-2xl py-2 mx-5"
+            className="bg-stone-600 text-stone-100 rounded-lg px-5 text-2xl py-2 mx-5 border-stone-900 border-2 hover:bg-stone-700 active:bg-stone-800 active:shadow-lg transition duration-150 ease-in-out"
             onClick={() => {
               setPartisanIndex(50);
             }}
@@ -57,12 +54,12 @@ const Article = () => {
             Reset Slider
           </button>
           <button
-            className="bg-stone-600 text-stone-100 rounded-lg px-5 text-2xl py-2 mx-5"
+            className="bg-stone-600 text-stone-100 rounded-lg px-5 text-2xl py-2 mx-5 border-stone-900 border-2 hover:bg-stone-700 active:bg-stone-800 active:shadow-lg transition duration-150 ease-in-out"
             onClick={() => {
               setShowResults(true);
             }}
           >
-            Show Results
+            Submit Guess
           </button>
         </div>
       ) : (
