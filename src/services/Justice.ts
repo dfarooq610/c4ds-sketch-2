@@ -220,8 +220,8 @@ export const compareJusticePartisanship = (
   let shiftedMQ = (justice.partisanIndex.mqScore + 6) * 10;
 
   let comparison;
-  // within a 5% delta (0.6 points)
-  if (Math.abs(scaledUserScore - shiftedMQ) < 5) {
+  // within a 5% delta (+- 3 points)
+  if (Math.abs(scaledUserScore - shiftedMQ) < 3) {
     comparison = "about as";
   } else {
     switch (justice.leaning) {
@@ -235,7 +235,7 @@ export const compareJusticePartisanship = (
   }
   return `${getProfessionalJusticeName(
     justice
-  )} is ${comparison} ${justice.leaning.toLowerCase()} than you have indicated.`;
+  )} is ${comparison} ${justice.leaning.toLowerCase()} ${comparison === "about as" ? "as" : "than"} you have indicated.`;
 };
 
 export const convertToMQ = (score: number): number => {
