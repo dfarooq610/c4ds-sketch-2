@@ -26,7 +26,7 @@ export const Results = ({
       <h1 className="font-josefin-sans mb-3 mt-10 text-2xl lg:text-3xl font-bold text-center">
         {titleText}
       </h1>
-      <p>{justice.summary}</p>
+      {justice.summary.split("\n").map((paragraph) => <div><p>{paragraph}</p><br/></div>)}
       <br />
       {hasConclusiveScore && (
         <div>
